@@ -3,33 +3,45 @@
 }
 
 body {
-    font-family: 'Manrope', sans-serif;
+    font-family: 'Lora', sans-serif;
 }
 
 #login-container, #signup-container {
     display: flex;
     height: 100%;
-    width: 75%;
+    width: 90%;
 }
 
-#login-image, #signup-image {
-    background: #A03E99;
-    background-size:     cover;
+#login-image, #signup-image 
+{
+    background-size: cover;
     background-repeat:   no-repeat;
     background-position: center center;   
-    display: block;
-    text-align: center;    
+    display: flex;    
     width: 50%;
 }
 
+#login-image img, #signup-image img {
+    max-height: 25%;
+    max-width: 25%;
+    height: auto;
+    width: auto;
+
+    position: absolute;
+    top: 25%;
+    left: 25%;
+
+    transform: translate(-25%, -25%);
+}
+
 #login-image h2, #signup-image h2 {
-    font-family: 'Playfair Display', serif;
+    font-family: 'Lora', serif;
     color: white;
     font-size: 5em;
 }
 
 #login-image p, #signup-image p {
-    font-family: 'Dancing Script', cursive;
+    font-family: 'Lora', cursive;
     color: white;
     font-size: 1.5em;
 }

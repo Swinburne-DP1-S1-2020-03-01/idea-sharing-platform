@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lora', serif;
+    display: block;
+    background: #dcd3e4;
+}
+
+#main {
+    display: flex;
+}
+
+
+.article-card {
+    border-color: #A03E99;
+    border: 1em;
+}
+
+#right-panel {
+    float:right;
+    display: block;
+    width: 30%;
+    margin: 0.5 rem;
+    padding: 0.5 rem;
+    text-align: center;
+}
+
+#main-panel {
+    float: left;
+    display: block;
+    width: 70%;
+    margin: 0.5 rem;
+    padding: 0.5 rem;
+    align-items: center;
+}
+
+#greet, #top-articles {
+    display: block;
+}
+
+
+.article-card .short-content {
+    text-align: justify;
+}
+
+#greet {
+    margin: 2%;
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.article-card {
+    background-color: white;
+    margin: 2% ;
+    /* padding: 0.5 rem; */
+    display: flex;
+}
+
+.article-card .card-left {
+    width: 30%;
+    padding: 2rem;
+}
+.article-card .card-right {
+    width: 70%;
+    /* margin: 0.5 rem; */
+    /* margin: 2%; */
+    padding: 2%;
+}
+
+.article-card .title {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+.card-left img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+#search-bar {
+    width: 80%;
+    padding: 1rem;
+    margin: 0.5rem;
+    border: none;
+}
+
+.card-right button {
+    float: right;
+    border: none;
+    background: none;
+    padding: 1rem;
+}
+.card-right button:hover {
+    color: white;
+    background-color: rgb(38, 10, 108);
+    transition: ease-in 0.5s;
+}

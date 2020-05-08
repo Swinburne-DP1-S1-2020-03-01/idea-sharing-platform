@@ -11,32 +11,45 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+
     <!-- CSS sheet-->
 	<link href="Styles/style.css" rel="stylesheet"/>
     <link href="Styles/login-signup.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="Scripts/login.js"></script>
     <title>Login | Idea Sharing</title>
 
 </head>
 <body>
+    <div id="navbar">
+    </div>
     <div id="login-container">
         <div id="login-image">
-            <h2>VOCES</h2>
-            <p>Let your voices be heard</p>
+            <img src="./Resources/Images/fullLogo.png" alt="VOCES">
         </div>
         <div id="login-box">
             <h2>Log in</h2>
-            <form method="post" action="login.php">
+            <form method="post" action="login.php" id="login-form">
                 <fieldset>
                         <p><input type="text" id="email" name="email" placeholder="email"/></p>
+                        <p id="email-error"></p>
                         <p><input type="password" id="pwd" name="pwd" placeholder="password"/></p>
+                        <div id="password-error"></div>
                         <p><button type="submit" name="login" id="login-button" value="login">Login</button></p>
                         <p>Don't have an account? <a href="register.html">Sign up</a></p>
                 </fieldset>
             </form>
         </div>
     </div>
+    <script>
+        $(function() {
+            $("#navbar").load("nav.html");
+            //$("#navbar").hide();
+
+        });
+    </script>
 </body>
 </html>

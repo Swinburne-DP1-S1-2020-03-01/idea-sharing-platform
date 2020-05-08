@@ -1,34 +1,53 @@
 <?php
     $host = "localhost";
 	$user = "root";
-	$password = "";
-    $link = mysqli_connect($host, $user, $password);
+    $password = "dp1-2020";
+    $sql_db = "idea-sharing";
+    $link = mysqli_connect($host, $user, $password, $sql_db);
 
     $username = $_POST["username"];
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
-    $date = date("Y-m-d");
+    $date = date("Y-m-d"); 
 
     if ($link == false)
     {
         echo "Unsuccessful connection.";
+        exit();
     }
     else
     {
-        $sql = "USE idea_sharing_platform";
-        $result = mysqli_query($link, $sql);
+        // $sql = "USE idea_sharing_platform";
+        // $result = mysqli_query($link, $sql);
 
-        $sql = "INSERT INTO Users (Email, Username, Password, Date_Joined)
-        VALUES ('$username', '$pwd', '$email', $date)";
-        $result = mysqli_query($link, $sql);
+        $emailExistQuery = "SELECT COUNT(*) as isExisted FROM Users WHERE Email = '$email'";
 
-        if ($result) 
+        if ($existCheck = mysqli_query($link, $emailExistQuery))
         {
-            echo "New record created successfully";
-        } 
-        else 
-        {
-            echo "Error: " . $sql . "<br>" . mysqli_error($link);
+            $count = mysqli_fetch_assoc($existCheck);
+            $isExisted = $count['isExisted'];
+            
+            if ($isExisted > 0)
+            {
+                echo "Email already used. Please use a different email";
+                exit();
+            }
+            else
+            {
+                $sql = "INSERT INTO Users (Email, Username, Password, Date_Joined)
+                VALUES ('$email', '$username', '$pwd', '$date')";
+                $result = mysqli_query($link, $sql);
+        
+                if ($result) 
+                {
+                    echo "New record created successfully";
+                    exit();
+                } 
+                else 
+                {
+                    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+                }
+            }
         }
     }  
 ?>
