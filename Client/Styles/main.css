@@ -8,6 +8,61 @@ body {
     background: #dcd3e4;
 }
 
-#main {
+/* Article card design */
+.article-card {
+    border-color: #A03E99;
+    border: 1em;
+    background-color: white;
+    margin: 2% ;
     display: flex;
+}
+
+.article-card .short-content {
+    text-align: justify;
+}
+
+.card-left {
+    width: 30%;
+    padding: 3rem;
+    text-align: center;
+}
+
+.card-left img {
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.card-right {
+    width: 70%;
+    /* margin: 0.5 rem; */
+    /* margin: 2%; */
+    padding: 2%;
+}
+
+.article-card .title {
+    font-weight: bold;
+    font-size: 2.5rem;
+}
+
+img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.card-right button {
+    float: right;
+    border: none;
+    background: none;
+    padding: 1rem;
+}
+.card-right button:hover {
+    color: white;
+    background-color: rgb(38, 10, 108);
+    transition: ease-in 0.5s;
+}
+
+.avatar {
+    border-radius: 50%;
 }

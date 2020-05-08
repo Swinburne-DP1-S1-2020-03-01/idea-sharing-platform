@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <!-- CSS sheet-->
 	<link href="Styles/main.css" rel="stylesheet"/>
-    <link href="Styles/homepage.css" rel="stylesheet"/> 
+    <link href="Styles/profile.css" rel="stylesheet"/> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     
     <!-- Javascript -->
@@ -32,53 +32,31 @@
     <div id="user-details">
         <h1>My Profile</h1>
         <div id="user-card">
-        <div id="card-left">
-            <div id="avatar"></div>
-        </div id="card-right">
-            <h2 id="username"></h2>
+        <div class="card-left">
+            <img class="avatar" src="./Resources/Images/dummy-avatar.jpg" alt="dummy avatar">
+        </div>
+        <div class="card-right">
+            <h2 id="username">Dummy username</h2>
             <p>Email: <span id="email"></span></p>
             <p>Joined Since: <span id="join-date"></span></p>
             <p>Published Articles: <span id="num-articles"></span></p>
             <button id="read-button">Edit</button>
+       </div>
         </div>
     </div>
     <div id="main-panel">    
-        <div id="greet">
-            <div id="welcome">Welcome, Amy!</div>    
-            <p>Have you checked out these articles?</p>
-        </div>
+        <h1>My Articles</h1>
         <div id="top-articles">
-            <!-- Below shows the structures of an article card -->
-            <!-- <div id="article-card">
-                <div id="card-left">
-                    <div id="article-thumbnail"></div>
-                </div id="card-right">
-                    <div id="title"></div>
-                    <div id="author"></div>
-                    <div id="description"></div>
-                    <button id="read-button"></button>
-                </div>
-            </div>-->
-
         </div>
         <div id="more-cards">
             <button id="more-card-button">See more posts</button>
         </div>
     </div>
-    <div id="right-panel">
-        <div id="search-panel">
-        <p><input type="text" id="search-bar"><i class="fas fa-search"></i></p>
-        </div>
-        <p>What's On Your Mind?</p>
-        <p>Write Now!</p>
-        <div id="calendar"></div>
     </div>
-</div>
     <script type = "module" src="./Scripts/homepage.js"></script>
     <script>
         $(function() {
             $("#navbar").load("nav.html");
-            $("#calendar").load("calendar.html");
         });
     </script>
 </body>
