@@ -1,18 +1,3 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Lora', serif;
-    display: block;
-    background: #dcd3e4;
-}
-
-#main {
-    display: flex;
-}
-
-
 .article-card {
     border-color: #A03E99;
     border: 1em;
