@@ -28,6 +28,9 @@
             $loggedInUser = mysqli_fetch_object($existCheck);
             $loggedInUserId = $loggedInUser->Id;
             //send the credentials of the logged in user to the front-end
+            $loggedInUserObject->Id = $loggedInUserId;
+            $loggedInUserJSON = json_encode($loggedInUserObject);
+            echo $loggedInUserJSON;
             header("Location: http://localhost/idea-sharing-platform/Client/home.html");
             exit();
         }
