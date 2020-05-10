@@ -23,6 +23,11 @@ body {
     margin: 2% ;
     display: flex;
 }
+
+.draft-message {
+    text-align: right;
+    color: #111111;
+}
 /* 
 #user-card {
     max-height: 20rem;

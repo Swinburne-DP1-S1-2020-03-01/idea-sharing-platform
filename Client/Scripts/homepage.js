@@ -47,17 +47,19 @@ function DisplayTopArticles(event)
         const cardRight = document.createElement('div');
         cardRight.classList.add("card-right");
 
-        //
-        const title = document.createElement("p");
+        // title and author message
+        const title_author = document.createElement("p");
+        const title = document.createElement("span");
         title.innerText = article.title;      
         title.classList.add("title");
-        cardRight.appendChild(title);
+        title_author.appendChild(title);
 
-        // 
-        const author = document.createElement("p");
+        const author = document.createElement("span");
         author.innerText = "By " + article.author;
         author.classList.add("author");
-        cardRight.appendChild(author);
+        title_author.appendChild(author)
+        cardRight.appendChild(title_author);
+
 
         // 
         const shortContent = document.createElement("p");

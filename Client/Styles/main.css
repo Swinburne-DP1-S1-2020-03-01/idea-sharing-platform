@@ -44,6 +44,7 @@ body {
 .article-card .title {
     font-weight: bold;
     font-size: 2.5rem;
+    margin: 0rem 2rem 0rem 0rem;
 }
 
 img {
