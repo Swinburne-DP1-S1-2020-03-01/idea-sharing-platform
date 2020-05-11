@@ -1,3 +1,5 @@
+
+
 <style>
     #navbar {
     display: inline-flex;
@@ -40,6 +42,10 @@
         transition: all ease-in 0.3s;
     }
 
+    #navbar nav a.active{
+        border-bottom: 8px solid red;
+    }
+
     #navbar #logo img {
         max-height: 3rem;
         width: auto;
@@ -59,15 +65,18 @@
         transition: all 0.3s ease;
     }
 </style>
-<div id="navbar">
+
+<div id="navbar" >
     <p id="brand">VOCES</p>
     <div id="logo">
         <img src="./Resources/Images/smallLogo.png" alt="VOCES">
     </div>
     <nav>
-        <a href="home.html">Home</a>
+        <a id="home" href="home.html">Home</a>
         <a href="profile.html">Profile</a>
         <a href="write.html">Write</a>
-        <button>Log out</button>
+        <a href="login.html">Log out</a>
+        <!--<button href="login.html">Log out</button>-->
     </nav>
+    <script type = "module" src="./Scripts/homepage.js"></script>
 </div>

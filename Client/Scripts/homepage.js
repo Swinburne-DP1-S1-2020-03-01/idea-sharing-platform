@@ -8,6 +8,7 @@ import {homepage_data} from './articles-homepage-mockdata.js'
 // mock data to display in the homepage 
 
 //export {homepage_data};
+"use strict"
 
 const topArticles = document.querySelector("#top-articles"); 
 
@@ -16,9 +17,7 @@ const topArticles = document.querySelector("#top-articles");
 // todoList.addEventListener('click', deleteCheck);
 // filterOption.addEventListener('click', filterTodo);
 
-document.addEventListener("DOMContentLoaded", DisplayTopArticles);
-
-//Function
+//document.addEventListener("DOMContentLoaded", DisplayTopArticles);
 
 function DisplayTopArticles(event)
 {
@@ -101,3 +100,15 @@ function DisplayTopArticles(event)
     // //APPEND to the new 
     // todoList.appendChild(todoDiv);
 }
+
+function DisplayName(){
+    document.getElementById("confirm_name").textContent = sessionStorage.email;
+}
+
+function init() {
+    DisplayName();
+    DisplayTopArticles();
+}
+
+//document.addEventListener("DOMContentLoaded", init);
+window.addEventListener("load",init);

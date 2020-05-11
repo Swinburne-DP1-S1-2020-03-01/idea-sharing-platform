@@ -17,6 +17,8 @@
     <!-- CSS sheet-->
 	<link href="Styles/main.css" rel="stylesheet"/>
     <link href="Styles/profile.css" rel="stylesheet"/> 
+    <link href="Styles/homepage.css" rel="stylesheet"/>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     
     <!-- Javascript -->
@@ -26,7 +28,18 @@
 
 <body>
     
-    <div id="navbar">
+    <div id="navbar" >   
+        <p id="brand">VOCES</p>
+        <div id="logo">
+            <img src="./Resources/Images/smallLogo.png" alt="VOCES">
+        </div>
+        <nav>
+            <a href="home.html">Home</a>
+            <a class="active" href="profile.html">Profile</a>
+            <a href="write.html">Write</a>
+            <a href="login.html">Log out</a>
+            <!--<button href="login.html">Log out</button>-->
+        </nav>
     </div>
     <div id="main">
     <div id="user-details">
@@ -56,7 +69,7 @@
     <script type = "module" src="./Scripts/homepage.js"></script>
     <script>
         $(function() {
-            $("#navbar").load("nav.html");
+            //$("#navbar").load("nav.html");
         });
     </script>
 </body>

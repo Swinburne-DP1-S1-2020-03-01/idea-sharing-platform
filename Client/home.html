@@ -25,13 +25,23 @@
 </head>
 
 <body>
-    
-    <div id="navbar">
+    <div id="navbar" >   
+        <p id="brand">VOCES</p>
+        <div id="logo">
+            <img src="./Resources/Images/smallLogo.png" alt="VOCES">
+        </div>
+        <nav class="nav" onload="hightlightMenu()">
+            <a class="active" href="home.html">Home</a>
+            <a href="profile.html">Profile</a>
+            <a href="write.html">Write</a>
+            <a href="login.html">Log out</a>
+            <!--<button href="login.html">Log out</button>-->
+        </nav>
     </div>
     <div id="main">
     <div id="main-panel">    
         <div id="greet">
-            <div id="welcome">Welcome, Amy!</div>    
+            <div id="welcome">Welcome, <span id="confirm_name"></span></div>    
             <p>Have you checked out these articles?</p>
         </div>
         <div id="top-articles">
@@ -62,9 +72,12 @@
     </div>
 </div>
     <script type = "module" src="./Scripts/homepage.js"></script>
+    <div id="test">
+        <button id="more-card-button">See more posts</button>
+    </div>
+    </div>
     <script>
         $(function() {
-            $("#navbar").load("nav.html");
             $("#calendar").load("calendar.html");
         });
     </script>

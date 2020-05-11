@@ -1,3 +1,8 @@
+function storeName(email)
+{
+    sessionStorage.email = email;
+}
+
 function checkEmail()
 {
     var email = document.getElementById("email").value;
@@ -12,6 +17,12 @@ function checkEmail()
         isEmailValid = false;
     }
     document.getElementById("email-error").innerHTML = emailErrorText;
+
+    if (isEmailValid)
+    {
+        storeName(email); 
+    }
+
     return isEmailValid;
 }
 
