@@ -35,7 +35,6 @@
             <a href="profile.php">Profile</a>
             <a href="write.php">Write</a>
             <a href="login.html">Log out</a>
-            <!--<button href="login.html">Log out</button>-->
         </nav>
     </div>
     <div id="main">

@@ -15,10 +15,7 @@
     }
     else
     {
-        // $sql = "USE idea_sharing_platform";
-        // $result = mysqli_query($link, $sql);
 
-        //$emailExistQuery = "SELECT COUNT(*) as isExisted FROM Users WHERE Email = '$email' AND password = '$pwd'";
 
         $loginCheckQuery = "SELECT Id,Email,Password FROM USERS WHERE Email = '$email' AND password = '$pwd'";
 
@@ -31,7 +28,9 @@
             $loggedInUserObject->Id = $loggedInUserId;
             $loggedInUserJSON = json_encode($loggedInUserObject);
             echo $loggedInUserJSON;
-            header("Location: http://localhost/idea-sharing-platform/Client/home.html");
+            session_start();
+            $_SESSION["Id"] = $loggedInUserId; 
+            header("Location: http://localhost/idea-sharing-platform/Client/home.php");
             exit();
         }
         else
@@ -40,33 +39,6 @@
             header("Location: http://localhost/idea-sharing-platform/Client/login.html");
             exit();
         }
-        
-        // if ($existCheck = mysqli_query($link, $loginCheckQuery))
-        // {
-        //     $count = mysqli_fetch_assoc($existCheck);
-        //     $isExisted = $count['isExisted'];
-            
-        //     if ($isExisted > 0)
-        //     {
-        //         echo "Email already used. Please use a different email";
-        //         exit();
-        //     }
-        //     else
-        //     {
-        //         $sql = "INSERT INTO Users (Email, Username, Password, Date_Joined)
-        //         VALUES ('$email', '$username', '$pwd', '$date')";
-        //         $result = mysqli_query($link, $sql);
-        
-        //         if ($result) 
-        //         {
-        //             echo "New record created successfully";
-        //             exit();
-        //         } 
-        //         else 
-        //         {
-        //             echo "Error: " . $sql . "<br>" . mysqli_error($link);
-        //         }
-        //     }
-        // }
+    
     }  
 ?>
