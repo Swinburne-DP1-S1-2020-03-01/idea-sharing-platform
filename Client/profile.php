@@ -25,8 +25,17 @@
 </head>
 
 <body>
-    
-    <div id="navbar">
+    <div id="navbar" >
+        <p id="brand">VOCES</p>
+        <div id="logo">
+            <img src="./Resources/Images/smallLogo.png" alt="VOCES">
+        </div>
+        <nav>
+            <a href="home.php">Home</a>
+            <a class="active" href="profile.php">Profile</a>
+            <a href="write.html">Write</a>
+            <a href="login.html">Log out</a>
+        </nav>
     </div>
     <div id="main">
     <div id="user-details">
@@ -57,10 +66,5 @@
     </div>
     </div>
     <script type = "module" src="./Scripts/profile.js"></script>
-    <script>
-        $(function() {
-            $("#navbar").load("nav.html");
-        });
-    </script>
 </body>
 </html>
