@@ -55,6 +55,9 @@
                     <button id="read-button"></button>
                 </div>
             </div>-->
+            <?php 
+                include 'display-my-posts.php';
+            ?>
 
         </div>
         <div id="more-cards">
