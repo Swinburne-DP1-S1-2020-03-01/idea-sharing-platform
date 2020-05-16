@@ -10,7 +10,7 @@
         echo "Unsuccessful connection.";
         exit();
     }
-    session_start();
+    //session_start();
 
     if (!isset($_SESSION["Id"])) {
         //header("location:http://localhost/idea-sharing-platform/Client/login.html");
