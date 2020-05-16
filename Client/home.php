@@ -56,7 +56,7 @@
                 </div>
             </div>-->
             <?php 
-                include 'display-my-posts.php';
+                include 'display-all-posts.php';
             ?>
 
         </div>
