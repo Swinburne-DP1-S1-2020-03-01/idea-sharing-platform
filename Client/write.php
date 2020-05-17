@@ -9,16 +9,14 @@
     
     <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
+    
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
     <!-- CSS sheet-->
     <link href="https://cdn.quilljs.com/1.0.0/quill.snow.css" rel="stylesheet">
     <link href="https://cdn.quilljs.com/1.0.0/quill.bubble.css" rel="stylesheet">
     <link href="Styles/main.css" rel="stylesheet"/>
-    <link href="Styles/homepage.css" rel="stylesheet"/> 
     <link href="Styles/write.css" rel="stylesheet"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
     
@@ -43,11 +41,15 @@
     </div>
     <div id="main">  
             <div id="greet">
-                <div id="welcome">Create an article</div>    
-                <p>Put your idea here</p>
+                <p class="welcome">Create an article</p>    
+                <p class="subwelcome">Put your idea here</p>
             </div>
             <div id="text-editor">
-            
+            </div>
+            <div id="button-bar">
+                <span> All articles will be saved as draft </span>
+                <button id="save-button">Save</button>
+                <button id="leave-button">Leave</button>
             </div>
         </div>
     </div>

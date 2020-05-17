@@ -10,10 +10,8 @@
     <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
+    
     <!-- CSS sheet-->
 	<link href="Styles/main.css" rel="stylesheet"/>
     <link href="Styles/profile.css" rel="stylesheet"/> 
@@ -33,7 +31,7 @@
         <nav>
             <a href="home.php">Home</a>
             <a class="active" href="profile.php">Profile</a>
-            <a href="write.html">Write</a>
+            <a href="write.php">Write</a>
             <a href="login.html">Log out</a>
         </nav>
     </div>

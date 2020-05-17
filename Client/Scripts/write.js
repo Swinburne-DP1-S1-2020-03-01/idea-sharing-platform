@@ -22,3 +22,16 @@ var quill = new Quill("#text-editor", {
 
 // Add the title text input before the text-editing area
 $("<input type='text' id='title' placeholder = 'Your title here...'/>").insertBefore("#text-editor");
+
+//button handle
+document.getElementById("leave-button").addEventListener("click", function() {
+    var confirmation = window.confirm("Are you sure you want to leave? Changes will not be saved");
+    if (confirmation) {
+        window.location.href = './home.php';
+    }
+    
+});
+
+document.getElementById("save-button").addEventListener("click", function() {
+    window.location.href = './profile.php';
+});

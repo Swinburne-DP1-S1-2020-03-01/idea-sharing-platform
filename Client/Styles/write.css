@@ -1,3 +1,22 @@
+#main {
+    width: 90%;
+    margin: auto;
+}
+
+.welcome{
+    margin: 2%;
+    font-weight: bold;
+    font-size: 2.5rem;
+    color: rgb(38, 10, 108);
+}
+
+.subwelcome {
+    margin: 2%;
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(38, 10, 108);
+}
+
 #title {
     background-color: transparent;
     appearance: none;
@@ -9,7 +28,23 @@
     width: 100%;
 }
 
+#text-editor {
+    padding: 2rem 5rem;
+}
+
 .ql-container {
     font-size: 15px;
     font-family: 'Lora', sans-serif;
+}
+
+#button-bar button {
+    float: right;
+    border: none;
+    background: none;
+    padding: 1rem;
+}
+#button-bar button:hover {
+    color: white;
+    background-color: rgb(38, 10, 108);
+    transition: ease-in 0.5s;
 }
