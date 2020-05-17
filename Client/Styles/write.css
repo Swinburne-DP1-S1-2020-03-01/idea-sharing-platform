@@ -1,0 +1,15 @@
+#title {
+    background-color: transparent;
+    appearance: none;
+    outline: none;
+    border: none;
+    font-size: 30px;
+    font-family: 'Lora', sans-serif;
+    padding: 2rem;
+    width: 100%;
+}
+
+.ql-container {
+    font-size: 15px;
+    font-family: 'Lora', sans-serif;
+}
