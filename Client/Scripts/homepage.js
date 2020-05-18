@@ -64,7 +64,9 @@ function DisplayName(){
 }
 
 function init() {
-    DisplayName();
+	//commented out as it conflicted with home.php name
+	// can remove if you guys dont use it
+    //DisplayName();
     DisplayTopArticles();
 }
 

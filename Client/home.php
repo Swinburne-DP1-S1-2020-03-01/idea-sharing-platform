@@ -28,7 +28,7 @@
         <div id="logo">
             <img src="./Resources/Images/smallLogo.png" alt="VOCES">
         </div>
-        <nav class="nav" onload="hightlightMenu()">
+        <nav>
             <a class="active" href="home.php">Home</a>
             <a href="profile.php">Profile</a>
             <a href="write.php">Write</a>
@@ -38,7 +38,20 @@
     <div id="main">
     <div id="main-panel">    
         <div id="greet">
-            <div id="welcome">Welcome, <span id="confirm_name"></span></div>    
+            <div id="welcome">
+                <?php
+                    require_once("settings.php");
+		
+                    $link = @mysqli_connect(
+                        $host,
+                        $user,
+                        $password,
+                        $sql_db
+                    );
+                    session_start();
+                    echo "<p>Welcome, " . $_SESSION["Username"] . "</p>";
+                ?>
+            </div>    
             <p>Have you checked out these articles?</p>
         </div>
         <div id="top-articles">
