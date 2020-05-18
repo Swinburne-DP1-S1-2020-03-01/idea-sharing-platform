@@ -53,6 +53,9 @@
                     <button id="read-button"></button>
                 </div>
             </div>-->
+            <?php 
+                include 'display-all-posts.php';
+            ?>
 
         </div>
         <div id="more-cards">

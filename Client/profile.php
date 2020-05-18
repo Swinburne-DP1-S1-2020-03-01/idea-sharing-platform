@@ -56,7 +56,9 @@
     <div id="main-panel">    
         <h1>My Articles</h1>
         <div id="top-articles">
-            
+            <?php 
+                include 'display-my-posts.php';
+            ?>
         </div>
         <div id="more-cards">
             <button id="more-card-button">See more posts</button>
