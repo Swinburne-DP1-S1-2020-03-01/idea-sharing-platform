@@ -15,30 +15,30 @@
     }
     else
     {
-
-
-        $loginCheckQuery = "SELECT Id,Email,Password FROM USERS WHERE Email = '$email' AND password = '$pwd'";
+        $loginCheckQuery = "SELECT Id,Username,Email,Password FROM USERS WHERE Email = '$email' AND password = '$pwd'";
 
         if ($existCheck = mysqli_query($link, $loginCheckQuery))
         {
+            // check if the user record returned is available and unique
+            if (mysqli_num_rows($existCheck) != 1)
+            {
+                echo "Incorrect username or password.";
+                header("Location: login.html");
+                exit();            
+            }
             echo "Logged in successfully.";
-            $loggedInUser = mysqli_fetch_object($existCheck);
-            $loggedInUserId = $loggedInUser->Id;
-            //send the credentials of the logged in user to the front-end
-            $loggedInUserObject->Id = $loggedInUserId;
-            $loggedInUserJSON = json_encode($loggedInUserObject);
-            echo $loggedInUserJSON;
+            $userRecord = mysqli_fetch_assoc($existCheck);
             session_start();
-            $_SESSION["Id"] = $loggedInUserId; 
-            header("Location: http://localhost/idea-sharing-platform/Client/home.php");
+            $_SESSION["Id"] = $userRecord["Id"];
+            $_SESSION["Username"] = $userRecord["Username"]; 
+            header("Location: home.php");
             exit();
         }
-        else
+        else 
         {
-            echo "Incorrect username or password.";
-            header("Location: http://localhost/idea-sharing-platform/Client/login.html");
+            echo "An unexpected issue happens. Please visit the page later.";
+            header("Location: login.html");
             exit();
-        }
-    
+        }    
     }  
 ?>
