@@ -33,7 +33,7 @@
             if ($isExisted > 0)
             {
                 echo "Email already used. Please use a different email";
-                header("Location: https://mercury.swin.edu.au/cos10011/s101603196/softwareDev/idea-sharing-platform/Client/register.html");
+                header("Location: register.html");
                 exit();
             }
             else
@@ -47,7 +47,7 @@
                     if ($result) 
                     {
                         echo "New record created successfully";
-                        header("Location: https://mercury.swin.edu.au/cos10011/s101603196/softwareDev/idea-sharing-platform/Client/login.html");
+                        header("Location: login.html");
                         exit();
                     } 
                     else 
@@ -58,7 +58,7 @@
                 else
                 {
                     echo "Password must be less than 30 characters";
-                    header("Location: https://mercury.swin.edu.au/cos10011/s101603196/softwareDev/idea-sharing-platform/Client/register.html");
+                    header("Location: register.html");
                     exit();
                 }                
             }

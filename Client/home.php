@@ -10,9 +10,6 @@
     <meta http-equiv="Cache-control" content="no-cache, no-store, must-revalidate">
     <meta http-equiv="Pragma" content="no-cache">
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope&family=Playfair+Display&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script&family=Playfair+Display&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet">
     <!-- CSS sheet-->
 	<link href="Styles/main.css" rel="stylesheet"/>
@@ -51,7 +48,7 @@
                         $sql_db
                     );
                     session_start();
-                    echo "<p>Welcome, " . $_SESSION["username"] . "</p>";
+                    echo "<p>Welcome, " . $_SESSION["Username"] . "</p>";
                 ?>
             </div>    
             <p>Have you checked out these articles?</p>

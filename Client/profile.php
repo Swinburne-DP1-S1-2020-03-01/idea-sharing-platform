@@ -33,7 +33,7 @@
         <nav>
             <a href="home.php">Home</a>
             <a class="active" href="profile.php">Profile</a>
-            <a href="write.html">Write</a>
+            <a href="write.php">Write</a>
             <a href="login.html">Log out</a>
         </nav>
     </div>
