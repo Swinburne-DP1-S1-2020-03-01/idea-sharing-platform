@@ -5,8 +5,6 @@
     require_once("settings.php");
 
     $content = $_POST["content"];
-    $content = rtrim($content, "</p>");
-    $content = ltrim($content, "<p>");
     $title = $_POST["title"];
     $date = date("Y-m-d"); 
     
