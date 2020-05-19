@@ -18,8 +18,8 @@
 
     if (!isset($_SESSION["Id"])) {
         //header("location:http://localhost/idea-sharing-platform/Client/login.html");
-        //echo "please log in";
-        //exit();
+        echo "please log in";
+        exit();
     }
 
     $Id = $_SESSION["Id"];

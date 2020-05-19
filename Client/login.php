@@ -44,6 +44,6 @@
             echo "An unexpected issue happens. Please visit the page later.";
             header("Location: login.html");
             exit();
-        }        
+        }
     }  
 ?>
