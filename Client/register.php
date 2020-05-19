@@ -1,17 +1,18 @@
 <?php
-    $host = "localhost";
-	$user = "root";
-    $password = "dp1-2020";
-    $sql_db = "VOCES_DB";
-    $link = mysqli_connect($host, $user, $password, $sql_db);
+    require_once("settings.php");
+		
+    $link = @mysqli_connect(
+        $host,
+        $user,
+        $password,
+        $sql_db
+    );
 
     $username = $_POST["username"];
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
     $date = date("Y-m-d"); 
-
-
-
+    
     if ($link == false)
     {
         echo "Unsuccessful connection.";
@@ -23,7 +24,7 @@
         // $result = mysqli_query($link, $sql);
 
         $emailExistQuery = "SELECT COUNT(*) as isExisted FROM Users WHERE Email = '$email'";
-
+        
         if ($existCheck = mysqli_query($link, $emailExistQuery))
         {
             $count = mysqli_fetch_assoc($existCheck);
@@ -32,7 +33,7 @@
             if ($isExisted > 0)
             {
                 echo "Email already used. Please use a different email";
-                header("Location: http://localhost/idea-sharing-platform/Client/register.html");
+                header("Location: register.html");
                 exit();
             }
             else
@@ -46,7 +47,7 @@
                     if ($result) 
                     {
                         echo "New record created successfully";
-                        header("Location: http://localhost/idea-sharing-platform/Client/login.html");
+                        header("Location: login.html");
                         exit();
                     } 
                     else 
@@ -57,7 +58,7 @@
                 else
                 {
                     echo "Password must be less than 30 characters";
-                    header("Location: http://localhost/idea-sharing-platform/Client/register.html");
+                    header("Location: register.html");
                     exit();
                 }                
             }

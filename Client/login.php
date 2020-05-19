@@ -1,10 +1,15 @@
 <?php
-    $host = "localhost";
-	$user = "root";
-    $password = "dp1-2020";
-    $sql_db = "voces_db";
-    $link = mysqli_connect($host, $user, $password, $sql_db);
+    require_once("settings.php");
+		
+    $link = @mysqli_connect(
+        $host,
+        $user,
+        $password,
+        $sql_db
+    );
 
+    //$email = htmlspecialchars($_GET["email"]);
+    //$pwd = htmlspecialchars($_GET["pwd"]);
     $email = $_POST["email"];
     $pwd = $_POST["pwd"];
 
@@ -39,6 +44,6 @@
             echo "An unexpected issue happens. Please visit the page later.";
             header("Location: login.html");
             exit();
-        }    
+        }
     }  
 ?>

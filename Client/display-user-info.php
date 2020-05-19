@@ -1,9 +1,13 @@
 <?php
-    $server = "localhost";
-    $username = "root";
-    $password = "dp1-2020";
-    $db = "VOCES_DB";
-    $link = mysqli_connect($server, $username, $password, $db);
+    require_once("settings.php");
+		
+    $link = @mysqli_connect(
+        $host,
+        $user,
+        $password,
+        $sql_db
+    );
+
     
     if ($link == false)
     {
