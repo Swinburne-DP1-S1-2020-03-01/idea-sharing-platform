@@ -46,6 +46,7 @@ document.getElementById("save-button").addEventListener("click", function() {
         data: article_data,
         success: function(){
             alert('Your post has been successfully saved.');
+            window.location.href = './profile.php';
             },
         error: function(){
             alert('An unexpected problem occurs. Please try again.');
