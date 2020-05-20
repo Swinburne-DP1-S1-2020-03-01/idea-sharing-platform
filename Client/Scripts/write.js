@@ -25,32 +25,13 @@ $("<input type='text' id='title' placeholder = 'Your title here...'/>").insertBe
 
 //button handle
 document.getElementById("leave-button").addEventListener("click", function() {
-    var confirmation = window.confirm("Are you sure you want to leave? Changes will not be saved.");
+    var confirmation = window.confirm("Are you sure you want to leave? Changes will not be saved");
     if (confirmation) {
         window.location.href = './home.php';
     }
     
 });
 
-// using jQuery to send the content data to a php file.
-// the php file will process and save articles to databases.
 document.getElementById("save-button").addEventListener("click", function() {
-    article_data = {
-       content: quill.root.innerHTML,
-       title: $("#title").val(),
-       isDraft: true
-    };
-    
-    $.post({
-        url: "save-articles.php", 
-        data: article_data,
-        success: function(){
-            alert('Your post has been successfully saved.');
-            window.location.href = './profile.php';
-            },
-        error: function(){
-            alert('An unexpected problem occurs. Please try again.');
-            }} 
-    )
+    window.location.href = './profile.php';
 });
-
