@@ -41,8 +41,15 @@ document.getElementById("save-button").addEventListener("click", function() {
        isDraft: true
     };
     
-    $.post( "save-articles.php", article_data, function(data) {
-        alert("result"+ data);
-    })
+    $.post({
+        url: "save-articles.php", 
+        data: article_data,
+        success: function(){
+            alert('Your post has been successfully saved.');
+            },
+        error: function(){
+            alert('An unexpected problem occurs. Please try again.');
+            }} 
+    )
 });
 
