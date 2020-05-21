@@ -20,7 +20,7 @@
     }
     else
     {
-        $loginCheckQuery = "SELECT Id,Username,Email,Password FROM USERS WHERE Email = '$email' AND password = '$pwd'";
+        $loginCheckQuery = "SELECT Id,Username,Email,Password FROM users WHERE Email = '$email' AND password = '$pwd'";
 
         if ($existCheck = mysqli_query($link, $loginCheckQuery))
         {

@@ -1,16 +1,20 @@
-<?php
-    $server = "localhost";
-    $username = "root";
-    $password = "dp1-2020";
-    $db = "VOCES_DB";
-    $link = mysqli_connect($server, $username, $password, $db);
+<script src="./Scripts/readbutton.js"></script>
+<?php		
+    require_once("settings.php");
+		
+    $link = @mysqli_connect(
+        $host,
+        $user,
+        $password,
+        $sql_db
+    );
     
     if ($link == false)
     {
         echo "Unsuccessful connection.";
         exit();
     }
-    session_start();
+    //session_start();
 
     if (!isset($_SESSION["Id"])) {
         //header("location:http://localhost/idea-sharing-platform/Client/login.html");
@@ -48,6 +52,7 @@
                 $article_preview .= "...";
             }
 
+            $index = $row["Id"];
             if ($row_owner['Username'] == null)
             {
                 $authorname = $row_owner['Email'];
@@ -74,7 +79,7 @@
             .           "<p class='title'>" . $row['Title'] . "</p>"
             .           "<p class='author'>" . "By " . $authorname . "</p>"
             .           "<p class='short-content'>" . $article_preview . "</p>"
-            .           "<button id='read-button'></button>"
+            .           "<button id='read-button' onclick='goToRead($ownerId, $index)'>Read more</button>"
             .       "</div>"
             .    "</div>";
         }

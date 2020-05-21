@@ -1,9 +1,13 @@
+<script src="./Scripts/readbutton.js"></script>
 <?php
-    $server = "localhost";
-    $username = "root";
-    $password = "dp1-2020";
-    $db = "VOCES_DB";
-    $link = mysqli_connect($server, $username, $password, $db);
+    require_once("settings.php");
+		
+    $link = @mysqli_connect(
+        $host,
+        $user,
+        $password,
+        $sql_db
+    );
     
     if ($link == false)
     {
@@ -31,12 +35,14 @@
   
     if (mysqli_num_rows($result) > 0)
     {
+        
         while($row = mysqli_fetch_assoc($result))
         {
             $result_owner = mysqli_query($link, $sql_owner);
             $row_owner = mysqli_fetch_assoc($result_owner);
 
             $article_preview = $row['Content'];
+            $index = $row["Id"];
 
             if (strlen($article_preview) > 500) // if you want...
             {
@@ -71,7 +77,7 @@
             .           "<p class='title'>" . $row['Title'] . "</p>"
             .           "<p class='author'>" . "By " . $authorname . "</p>"
             .           "<p class='short-content'>" . $article_preview . "</p>"
-            .           "<button id='read-button'></button>"
+            .           "<button id='read-button' onclick='goToRead($Id, $index)'>Read more</button>"
             .       "</div>"
             .    "</div>";
         }
