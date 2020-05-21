@@ -81,6 +81,3 @@ function DisplayTopArticles(event)
     }
 }
 
-function init(){
-    
-}
