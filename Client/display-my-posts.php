@@ -35,13 +35,14 @@
   
     if (mysqli_num_rows($result) > 0)
     {
-        $index = 1;
+        
         while($row = mysqli_fetch_assoc($result))
         {
             $result_owner = mysqli_query($link, $sql_owner);
             $row_owner = mysqli_fetch_assoc($result_owner);
 
             $article_preview = $row['Content'];
+            $index = $row["Id"];
 
             if (strlen($article_preview) > 500) // if you want...
             {
@@ -79,7 +80,6 @@
             .           "<button id='read-button' onclick='goToRead($Id, $index)'>Read more</button>"
             .       "</div>"
             .    "</div>";
-            $index++;
         }
     }
 ?>
