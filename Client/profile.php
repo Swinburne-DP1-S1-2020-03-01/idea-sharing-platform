@@ -66,5 +66,6 @@
     </div>
     </div>
     <script type = "module" src="./Scripts/profile.js"></script>
+    
 </body>
 </html>

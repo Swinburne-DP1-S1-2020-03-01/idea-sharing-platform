@@ -80,3 +80,4 @@ function DisplayTopArticles(event)
         topArticles.appendChild(articleCard);
     }
 }
+
