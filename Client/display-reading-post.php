@@ -27,6 +27,7 @@
 
     $Id = $_SESSION["ReadId"];
     $rows = $_SESSION["ReadRow"];
+
     $sql = "SELECT * FROM posts where OwnerId = '$Id' AND Id = '$rows'";
     $sql_owner = "SELECT * FROM users where Id = '$Id'";
     $result = mysqli_query($link, $sql);

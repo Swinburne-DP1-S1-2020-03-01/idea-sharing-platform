@@ -34,7 +34,6 @@
   
     if (mysqli_num_rows($result) > 0)
     {
-        $index = 1;
         while($row = mysqli_fetch_assoc($result))
         {
             $ownerId = $row['OwnerId'];
@@ -53,6 +52,7 @@
                 $article_preview .= "...";
             }
 
+            $index = $row["Id"];
             if ($row_owner['Username'] == null)
             {
                 $authorname = $row_owner['Email'];
@@ -82,7 +82,6 @@
             .           "<button id='read-button' onclick='goToRead($ownerId, $index)'>Read more</button>"
             .       "</div>"
             .    "</div>";
-            $index++;
         }
     }
 ?>
