@@ -1,4 +1,5 @@
 <script src="./Scripts/readbutton.js"></script>
+<script src="./Scripts/profile.js"></script>
 <?php
     require_once("settings.php");
 		
@@ -40,9 +41,11 @@
         {
             $result_owner = mysqli_query($link, $sql_owner);
             $row_owner = mysqli_fetch_assoc($result_owner);
-
-            $article_preview = $row['Content'];
             $index = $row["Id"];
+            //
+            $article_preview = $row['Content'];
+            // display the draft message
+            $isDraft = ($row["Draft"] == 1 ? "Not published" : "Published");
 
             if (strlen($article_preview) > 500) // if you want...
             {
@@ -74,10 +77,13 @@
             .        "<img class='article-thumbnail' src='" . $imageUrl . "' alt='dummy avatar'>"
             .    "</div>"
             .    "<div class='card-right'>"
+            .           "<p class='draft-message'>" . $isDraft . "</p>"
             .           "<p class='title'>" . $row['Title'] . "</p>"
             .           "<p class='author'>" . "By " . $authorname . "</p>"
             .           "<p class='short-content'>" . $article_preview . "</p>"
             .           "<button id='read-button' onclick='goToRead($Id, $index)'>Read more</button>"
+            .           "<button class='.edit-button' onclick='goToEdit($index)'>Edit</button>"
+            .           "<button class='.delete-button' onclick='delete($index)'>Delete</button>"
             .       "</div>"
             .    "</div>";
         }
