@@ -23,23 +23,16 @@
     max-height: 50%;
 }
 
-.reading-article-card .title {
-    text-align: center;
-    display: inline;
-    font-weight: bold;
-    font-size: 5.0rem;
+.textPosition {
+    width: 55%;
 }
 
-.reading-article-card .author {
-    text-align: center;
-    
-    font-weight: bold;
-    font-size: 1.5rem;
+.textPositionEmail {
+    width: 53%;
 }
 
-.reading-article-card .short-content {
-    text-align: justify;
-    display: inline;
+.textPositionConfirmP {
+    width: 60%;
 }
 
 .edit-change-button button {
