@@ -9,3 +9,6 @@ function readButton(value){
     window.location.href = value + ".php";
 }
 
+function goToProfileEdit(){
+    window.location.href = "edit-profile.php";   
+} 
