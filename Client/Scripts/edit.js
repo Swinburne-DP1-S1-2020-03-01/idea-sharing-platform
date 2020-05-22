@@ -12,7 +12,6 @@ var toolBarOptions = [
 var quill = new Quill("#text-editor", {
     modules: {
         toolbar: toolBarOptions,
-        
     },
     bounds: document.body,
     placeholder: "Compose an epic here...",
@@ -35,17 +34,22 @@ document.getElementById("leave-button").addEventListener("click", function() {
 // using jQuery to send the content data to a php file.
 // the php file will process and save articles to databases.
 document.getElementById("save-button").addEventListener("click", function() {
+    var url = new URL(window.location.href);
+    var articleId = url.searchParams.get("articleId");
+
     article_data = {
        content: quill.root.innerHTML,
        title: $("#title").val(),
        isDraft: true,
-       isNew: 1,
+       isNew: 0,
+       articleId: articleId
     };
     
     $.post({
         url: "save-articles.php", 
         data: article_data,
-        success: function(d){
+        success: function(data){
+            alert(data);
             window.location.href = './profile.php';
             },
         error: function(){
@@ -53,3 +57,34 @@ document.getElementById("save-button").addEventListener("click", function() {
             }} 
     )
 });
+
+function LoadContent()
+{
+    var url = new URL(window.location.href);
+    var postId = url.searchParams.get("articleId");
+    if (postId !== "") {
+        var postData = {
+            Id: postId,
+        }
+        $.post({
+            url: "get-editable-content.php",
+            data: postData,
+            success: function(data) {
+                var result = jQuery.parseJSON(data);
+                quill.root.innerHTML = result["Content"];
+                document.getElementById("title").value = result["Title"];
+                
+            },
+            error: function() {
+                alert("An unexpected problem occurs. Please try again.");
+            }
+        })
+    }
+    else {
+        alert("An unexpected problem occurs. Please try again.");
+        window.location.href = "./profile.js";
+    }
+
+}
+
+window.onload = LoadContent;

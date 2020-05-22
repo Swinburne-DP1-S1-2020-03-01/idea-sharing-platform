@@ -19,6 +19,7 @@
     
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script type = "module" src="Scripts/profile.js"></script>
     <title>Profile | Idea Sharing</title>
 </head>
 
@@ -65,7 +66,6 @@
         </div>
     </div>
     </div>
-    <script type = "module" src="./Scripts/profile.js"></script>
     
 </body>
 </html>

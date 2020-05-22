@@ -36,6 +36,7 @@
         echo "Connection false";
         exit();
     }
+
     $index = 0;
 
     $row = mysqli_fetch_assoc($result);
