@@ -47,7 +47,7 @@
         .       "<p>Email: <span id='email'>". $row['Email'] . "</span></p>"
         .       "<p>Joined Since: <span id='join-date'>" . date("d-m-Y", strtotime($row['Date_Joined'])) . "</span></p>"
         .       "<p>Number of articles: <span id='number-articles'>" . $row_count['COUNT(Id)'] .  "</span></p>"
-        .       "<button id='read-button'>Edit</button>"
+        .       "<button id='read-button' onclick='goToProfileEdit()'>Edit</button>"
         .   "</div>"
         .   "</div>";
     }
