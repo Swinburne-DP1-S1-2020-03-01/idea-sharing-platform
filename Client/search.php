@@ -29,7 +29,7 @@
             <img src="./Resources/Images/smallLogo.png" alt="VOCES">
         </div>
         <nav>
-            <a class="active" href="home.php">Home</a>
+            <a href="home.php">Home</a>
             <a href="profile.php">Profile</a>
             <a href="write.php">Write</a>
             <a href="login.html">Log out</a>
