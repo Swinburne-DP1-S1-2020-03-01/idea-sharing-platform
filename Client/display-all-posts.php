@@ -62,6 +62,8 @@
                 $authorname = $row_owner['Username'];
             }
 
+                fdgekljrgjeigj
+
             if ($row['image_url'] == null)
             {
                 $imageUrl = "./Resources/Images/dummy-avatar.jpg";
