@@ -75,6 +75,7 @@
             $("#calendar").load("calendar.html");
         });
     </script>
+    <script src="./Scripts/readbutton.js"></script>
     <script src="./Scripts/search.js"></script>
 </html>
 </body>

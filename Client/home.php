@@ -77,7 +77,7 @@
     </div>
     <div id="right-panel">
         <div id="search-panel">
-        <p><input type="text" id="search-bar"><i class="fas fa-search"></i></p>
+        <p><input type="text" id="search-bar"><i id="search-button" class="fas fa-search"></i></p>
         </div>
         <p>What's On Your Mind?</p>
         <p>Write Now!</p>
@@ -92,6 +92,17 @@
     <script>
         $(function() {
             $("#calendar").load("calendar.html");
+        });
+
+        document.getElementById("search-button").addEventListener("click", function() 
+        {
+            var search_Criteria = document.getElementById("search-bar").value;
+            if (search_Criteria != "" && search_Criteria != null) 
+            {
+                sessionStorage.searchItem = search_Criteria;
+                window.location.href = "./search.php";
+            }
+            
         });
     </script>
 </body>
