@@ -19,7 +19,7 @@
     
     <!-- Javascript -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <title>Homepage | Idea Sharing</title>
+    <title>Search Results | VOCES</title>
 </head>
 
 <body>
@@ -29,7 +29,7 @@
             <img src="./Resources/Images/smallLogo.png" alt="VOCES">
         </div>
         <nav>
-            <a class="active" href="home.php">Home</a>
+            <a href="home.php">Home</a>
             <a href="profile.php">Profile</a>
             <a href="write.php">Write</a>
             <a href="login.html">Log out</a>
@@ -48,31 +48,16 @@
                         $password,
                         $sql_db
                     );
+    
                     session_start();
-                    echo "<p>Welcome, " . $_SESSION["Username"] . "</p>";
-                ?>
-            </div>    
-            <p>Have you checked out these articles?</p>
-        </div>
-        <div id="top-articles">
-            <!-- Below shows the structures of an article card -->
-            <!-- <div id="article-card">
-                <div id="card-left">
-                    <div id="article-thumbnail"></div>
-                </div id="card-right">
-                    <div id="title"></div>
-                    <div id="author"></div>
-                    <div id="description"></div>
-                    <button id="read-button"></button>
-                </div>
-            </div>-->
-            <?php 
-                include 'display-all-posts.php';
-            ?>
 
+                    //echo "Search criteria " . $_POST["searchCriteria"];
+                ?>
+                <p id="search-message"></p>
+                <p id="search-content"></p>
+            </div>    
         </div>
-        <div id="more-cards">
-            <button id="more-card-button">See more posts</button>
+        <div id="search-results">
         </div>
     </div>
     <div id="right-panel">
@@ -84,26 +69,13 @@
         <div id="calendar"></div>
     </div>
 </div>
-    <script type = "module" src="./Scripts/homepage.js"></script>
-    <div id="test">
-        <button id="more-card-button">See more posts</button>
-    </div>
     </div>
     <script>
         $(function() {
             $("#calendar").load("calendar.html");
         });
-
-        document.getElementById("search-button").addEventListener("click", function() 
-        {
-            var search_Criteria = document.getElementById("search-bar").value;
-            if (search_Criteria != "" && search_Criteria != null) 
-            {
-                sessionStorage.searchItem = search_Criteria;
-                window.location.href = "./search.php";
-            }
-            
-        });
     </script>
-</body>
+    <script src="./Scripts/readbutton.js"></script>
+    <script src="./Scripts/search.js"></script>
 </html>
+</body>
