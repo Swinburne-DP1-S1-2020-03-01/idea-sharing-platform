@@ -24,7 +24,6 @@
 
     $searchCriteria = $_POST["searchCriteria"];
     //$searchCriteria = $_SESSION["searchCriteria"];
-    //echo $searchCriteria;
     $Id = $_SESSION["Id"];
     $sql = "SELECT * FROM posts WHERE Title LIKE '$searchCriteria'";
     $result = mysqli_query($link, $sql);

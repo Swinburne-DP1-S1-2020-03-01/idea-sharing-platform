@@ -48,13 +48,17 @@
                         $password,
                         $sql_db
                     );
+    
                     session_start();
+
+                    //echo "Search criteria " . $_POST["searchCriteria"];
                 ?>
+                <p id="search-message"></p>
+                <p id="search-content"></p>
             </div>    
         </div>
-        <?php 
-            include 'display-search-results.php';
-        ?>
+        <div id="search-results">
+        </div>
     </div>
     <div id="right-panel">
         <div id="search-panel">
@@ -72,5 +76,5 @@
         });
     </script>
     <script src="./Scripts/search.js"></script>
-</body>
 </html>
+</body>
