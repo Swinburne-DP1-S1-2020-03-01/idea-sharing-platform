@@ -1,7 +1,7 @@
 <script src="./Scripts/readbutton.js"></script>
 <?php		
     require_once("settings.php");
-		
+	require_once("utils.php");
     $link = @mysqli_connect(
         $host,
         $user,
@@ -44,23 +44,10 @@
             $row_owner = mysqli_fetch_assoc($result_owner);
 
             $article_preview = $row['Content'];
-
-            if (strlen($article_preview) > 500) // if you want...
-            {
-                $maxLength = 500;
-                $article_preview = substr($article_preview, 0, $maxLength);
-                $article_preview .= "...";
-            }
+            $article_preview = DisplayArticlePreview($article_preview);
 
             $index = $row["Id"];
-            if ($row_owner['Username'] == null)
-            {
-                $authorname = $row_owner['Email'];
-            }
-            else
-            {
-                $authorname = $row_owner['Username'];
-            }
+            $authorname = DisplayAuthor($row_owner['Username'], $row_owner['Email']);
 
             if ($row['image_url'] == null)
             {
