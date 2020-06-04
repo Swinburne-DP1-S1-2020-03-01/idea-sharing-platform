@@ -44,8 +44,8 @@
             $row_owner = mysqli_fetch_assoc($result_owner);
 
             $article_preview = $row['Content'];
-            $article_preview = DisplayArticlePreview($article_preview);
-
+            $article_preview = DisplayArticlePreview($article_preview, 500);
+            
             $index = $row["Id"];
             $authorname = DisplayAuthor($row_owner['Username'], $row_owner['Email']);
 
