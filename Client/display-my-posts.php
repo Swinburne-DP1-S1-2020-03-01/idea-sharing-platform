@@ -42,26 +42,13 @@
             $result_owner = mysqli_query($link, $sql_owner);
             $row_owner = mysqli_fetch_assoc($result_owner);
             $index = $row["Id"];
-            //
-            $article_preview = $row['Content'];
+    
             // display the draft message
-            $isDraft = ($row["Draft"] == 1 ? "Not published" : "Published");
+            $isDraft = DisplayDraftMessage($row["Draft"]);
+            $article_preview = $row['Content'];
+            $article_preview = DisplayArticlePreview($article_preview, 500);
 
-            if (strlen($article_preview) > 500) // if you want...
-            {
-                $maxLength = 500;
-                $article_preview = substr($article_preview, 0, $maxLength);
-                $article_preview .= "...";
-            }
-
-            if ($row_owner['Username'] == null)
-            {
-                $authorname = $row_owner['Email'];
-            }
-            else
-            {
-                $authorname = $row_owner['Username'];
-            }
+            $authorname = DisplayAuthor($row_owner['Username'], $row_owner['Email']);
 
             if ($row['image_url'] == null)
             {
