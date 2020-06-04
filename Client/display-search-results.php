@@ -1,8 +1,7 @@
 <script src="./Scripts/readbutton.js"></script>
-<script src="./Scripts/profile.js"></script>
-<?php
+<?php		
     require_once("settings.php");
-	require_once("utils.php");
+		
     $link = @mysqli_connect(
         $host,
         $user,
@@ -23,9 +22,10 @@
         //exit();
     }
 
+    $searchCriteria = $_POST["searchCriteria"];
+    //$searchCriteria = $_SESSION["searchCriteria"];
     $Id = $_SESSION["Id"];
-    $sql = "SELECT * FROM posts where OwnerId = '$Id'";
-    $sql_owner = "SELECT * FROM users where Id = '$Id'";
+    $sql = "SELECT * FROM posts WHERE Title LIKE '$searchCriteria'";
     $result = mysqli_query($link, $sql);
 
     if ($result == false) {
@@ -33,22 +33,35 @@
         exit();
     }
 
-  
     if (mysqli_num_rows($result) > 0)
     {
-        
         while($row = mysqli_fetch_assoc($result))
         {
+            $ownerId = $row['OwnerId'];
+
+            $sql_owner = "SELECT * FROM users where Id = '$ownerId'";
+
             $result_owner = mysqli_query($link, $sql_owner);
             $row_owner = mysqli_fetch_assoc($result_owner);
-            $index = $row["Id"];
-    
-            // display the draft message
-            $isDraft = DisplayDraftMessage($row["Draft"]);
-            $article_preview = $row['Content'];
-            $article_preview = DisplayArticlePreview($article_preview, 500);
 
-            $authorname = DisplayAuthor($row_owner['Username'], $row_owner['Email']);
+            $article_preview = $row['Content'];
+
+            if (strlen($article_preview) > 500) // if you want...
+            {
+                $maxLength = 500;
+                $article_preview = substr($article_preview, 0, $maxLength);
+                $article_preview .= "...";
+            }
+
+            $index = $row["Id"];
+            if ($row_owner['Username'] == null)
+            {
+                $authorname = $row_owner['Email'];
+            }
+            else
+            {
+                $authorname = $row_owner['Username'];
+            }
 
             if ($row['image_url'] == null)
             {
@@ -64,15 +77,16 @@
             .        "<img class='article-thumbnail' src='" . $imageUrl . "' alt='dummy avatar'>"
             .    "</div>"
             .    "<div class='card-right'>"
-            .           "<p class='draft-message'>" . $isDraft . "</p>"
             .           "<p class='title'>" . $row['Title'] . "</p>"
             .           "<p class='author'>" . "By " . $authorname . "</p>"
             .           "<p class='short-content'>" . $article_preview . "</p>"
-            .           "<button id='read-button' onclick='goToRead($Id, $index)'>Read more</button>"
-            .           "<button class='.edit-button' onclick='goToEdit($index)'>Edit</button>"
-            .           "<button class='.delete-button' onclick='delete($index)'>Delete</button>"
+            .           "<button id='read-button' onclick='goToRead($ownerId, $index)'>Read more</button>"
             .       "</div>"
             .    "</div>";
         }
+    }
+    else
+    {
+        echo "No results found";
     }
 ?>

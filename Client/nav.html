@@ -1,70 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="utf-8"/>
+	<meta name="description" content="nav bar page"/>
+	<meta name="keywords" content="html, tags"/>
+	<meta name="author" content="Team 1 - Development Tools & Practice"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Nav bar | Idea Sharing</title>
 
-<style>
-    #navbar {
-    display: inline-flex;
-    align-items: center;
-    background: rgb(38, 10, 108);
-    height: 5rem;
-    width: 100%;
-    box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
-    margin: 0rem 1rem 0rem 0rem;
-    }
-
-    #brand {
-        width: 30%;
-        color: white;
-        font-size: 2.5rem;
-        padding: 2rem;
-    }
-
-    #logo {
-        display: flex;
+    <style>
+        #navbar {
+        display: inline-flex;
         align-items: center;
-        width: 20%;
-    }
+        background: rgb(38, 10, 108);
+        height: 5rem;
+        width: 100%;
+        box-shadow: 0 2px 2px -2px rgba(0,0,0,.2);
+        margin: 0rem 1rem 0rem 0rem;
+        }
 
-    nav {
-        width: 50%;
-        display:flex;
-    }
+        #brand {
+            width: 30%;
+            color: white;
+            font-size: 2.5rem;
+            padding: 2rem;
+        }
 
-    #navbar nav a {
-        color: white;
-        font-size: 1.5em;
-        margin: 2rem;
-        text-decoration: none;
-    }
+        #logo {
+            display: flex;
+            align-items: center;
+            width: 20%;
+        }
 
-    #navbar nav a:hover{
-        color:#FF335A;
-        text-decoration: underline;
-        transition: all ease-in 0.3s;
-    }
+        nav {
+            width: 50%;
+            display:flex;
+        }
 
-    #navbar nav a.active{
-        border-bottom: 8px solid red;
-    }
+        #navbar nav a {
+            color: white;
+            font-size: 1.5em;
+            margin: 2rem;
+            text-decoration: none;
+        }
 
-    #navbar #logo img {
-        max-height: 3rem;
-        width: auto;
-        object-fit: cover;
-    }
+        #navbar nav a:hover{
+            color:#FF335A;
+            text-decoration: underline;
+            transition: all ease-in 0.3s;
+        }
 
-    #navbar nav button {
-        color: white;
-        float: right;
-        border: none;
-        background: none;
-        padding: 1rem;
-        margin: 1rem;
-    }
-    #navbar nav button:hover {
-        background: #FF335A;
-        transition: all 0.3s ease;
-    }
-</style>
+        #navbar nav a.active{
+            border-bottom: 8px solid red;
+        }
+
+        #navbar #logo img {
+            max-height: 3rem;
+            width: auto;
+            object-fit: cover;
+        }
+
+        #navbar nav button {
+            color: white;
+            float: right;
+            border: none;
+            background: none;
+            padding: 1rem;
+            margin: 1rem;
+        }
+        #navbar nav button:hover {
+            background: #FF335A;
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
 
 <div id="navbar" >
     <p id="brand">VOCES</p>
