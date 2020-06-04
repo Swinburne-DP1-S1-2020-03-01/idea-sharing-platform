@@ -68,9 +68,10 @@
             .           "<p class='title'>" . $row['Title'] . "</p>"
             .           "<p class='author'>" . "By " . $authorname . "</p>"
             .           "<p class='short-content'>" . $article_preview . "</p>"
+            .           "<button class='publish-button' onclick='UpdateTopArticles(this)'>Publish</button>"
             .           "<button id='read-button' onclick='goToRead($Id, $index)'>Read more</button>"
-            .           "<button class='.edit-button' onclick='goToEdit($index)'>Edit</button>"
-            .           "<button class='.delete-button' onclick='delete($index)'>Delete</button>"
+            .           "<button class='edit-button' onclick='goToEdit($index)'>Edit</button>"
+            .           "<button class='delete-button' onclick='DeleteCard(this.parentNode.parentNode)'>Delete</button>"
             .       "</div>"
             .    "</div>";
         }
