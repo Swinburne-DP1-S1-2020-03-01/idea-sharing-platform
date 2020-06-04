@@ -2,7 +2,7 @@
 <script src="./Scripts/profile.js"></script>
 <?php
     require_once("settings.php");
-	require_one("utils.php");
+	require_once("utils.php");
     $link = @mysqli_connect(
         $host,
         $user,
