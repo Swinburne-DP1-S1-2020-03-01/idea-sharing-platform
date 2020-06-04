@@ -2,7 +2,7 @@
 <script src="./Scripts/profile.js"></script>
 <?php
     require_once("settings.php");
-	require_one("utils.php");
+	require_once("utils.php");
     $link = @mysqli_connect(
         $host,
         $user,
@@ -36,16 +36,16 @@
   
     if (mysqli_num_rows($result) > 0)
     {
-        
         while($row = mysqli_fetch_assoc($result))
         {
             $result_owner = mysqli_query($link, $sql_owner);
             $row_owner = mysqli_fetch_assoc($result_owner);
             $index = $row["Id"];
-    
+
             // display the draft message
             $isDraft = DisplayDraftMessage($row["Draft"]);
             $article_preview = $row['Content'];
+
             $article_preview = DisplayArticlePreview($article_preview, 500);
 
             $authorname = DisplayAuthor($row_owner['Username'], $row_owner['Email']);
