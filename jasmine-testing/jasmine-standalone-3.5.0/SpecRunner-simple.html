@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Jasmine Spec Runner v3.5.0</title>
+
+  <link rel="shortcut icon" type="image/png" href="lib/jasmine-3.5.0/jasmine_favicon.png">
+  <link rel="stylesheet" href="lib/jasmine-3.5.0/jasmine.css">
+
+  <script src="lib/jasmine-3.5.0/jasmine.js"></script>
+  <script src="lib/jasmine-3.5.0/jasmine-html.js"></script>
+  <script src="lib/jasmine-3.5.0/boot.js"></script>
+  <script src="lib/jasmine-3.5.0/jquery.js"></script>
+  <script src="lib/jasmine-3.5.0/jasmine-jquery.js"></script>
+  
+  <script src=""></script>
+    <script type="text/javascript">
+     var MSG = "Hello World!";
+    
+     function setUpHTMLFixture() {
+       loadFixtures("html-simple.html");
+       var loginForm = new LoginForm({selector: '#login-form'});
+    }
+    
+    function NewInvestmentView(params) {
+        this.$el = $(params.selector);
+    }
+    
+    NewInvestmentView.prototype = {
+        $: function () {
+        return this.$el.find.apply(this.$el, arguments);
+        },
+        getSymbolInput: function () {
+        return this.$('.new-investment-stock-symbol')
+        }
+       };
+    
+    NewInvestmentView.prototype.setSymbol = function(value) {
+        this.$('.new-investment-stock-symbol').val(value);
+    };
+    
+    it("should expose a property with its DOM element", function() {
+        expect(view.$el).toExist();
+    });
+
+    it("should have an empty stock symbol", function() {
+        expect(view.getSymbolInput()).toHaveValue('');
+    })
+ 
+describe("DOM TESTS:***************", function() { 
+  describe("Button Click Event Tests", function() {
+    var spyEvent;
+       
+    beforeEach(function() {
+      setUpHTMLFixture();
+    });
+       
+    it ("should invoke the btnShowMessage click event.", function() {
+      spyEvent = spyOnEvent('#btnShowMessage', 'click');
+      $('#btnShowMessage').trigger( "click" );
+           
+      expect('click').toHaveBeenTriggeredOn('#btnShowMessage');
+      expect(spyEvent).toHaveBeenTriggered();
+    });
+       
+    it ("should invoke the btnHideMessage click event.", function() {
+      spyEvent = spyOnEvent('#btnHideMessage', 'click');
+      $('#btnHideMessage').trigger( "click" );
+           
+      expect('click').toHaveBeenTriggeredOn('#btnHideMessage');
+      expect(spyEvent).toHaveBeenTriggered();
+    });
+  });
+       
+  describe("Show message tests", function() {
+    beforeEach(function() {
+      setUpHTMLFixture();
+      $('#txtMessage').val(MSG);
+      $('#btnShowMessage').trigger( "click" );
+    });
+     
+    it ("should display the message when button is clicked.", function() {
+      expect($('#pMsg')).toHaveText($('#txtMessage').val());
+    });
+  });
+    
+  describe("Hide message tests", function() {
+    beforeEach(function() {
+      setUpHTMLFixture();
+      $('#pMsg').text(MSG);
+      $('#btnHideMessage').trigger( "click" );
+    });
+     
+    it ("should remove the message when button is clicked.", function() {
+      expect($('#pMsg')).toHaveText("");
+    });
+  });
+});
+  </script>
+</head>
+<script src="spec/"
+</html>
